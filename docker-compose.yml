@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  appname:
+    build: 
+      context: .
+    ports: 
+      - "8000:8000"
+    volumes:
+      - ./app:/app # ./app (this project) link to /app (in Docker Container)
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000" 
+    
